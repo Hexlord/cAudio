@@ -47,8 +47,8 @@ set(CAUDIO_LIB_DIRECTORY "/lib")
 ######################################################################
 
 # Customise what to build
-option(CAUDIO_STATIC "Static build" FALSE)
-option(CAUDIO_BUILD_SAMPLES "Build Samples" TRUE)
+option(CAUDIO_STATIC "Static build" TRUE)
+option(CAUDIO_BUILD_SAMPLES "Build Samples" FALSE)
 option(CAUDIO_BUILD_CSHARP_WRAPPER "Build CSharpWrapper - this wrapper is used with the provided *.cs files" FALSE)
 
 #Custom settings 
@@ -60,9 +60,9 @@ option(CAUDIO_ENABLE_WAV "Enable RIFF/Wav decoder" TRUE)
 option(CAUDIO_ENABLE_DEFAULT_FILESYSTEM "Enable default filesystem data source" TRUE)
 option(CAUDIO_ENABLE_DEFAULT_FILE_LOGGER "Enable default file logger (html)" TRUE)
 option(CAUDIO_ENABLE_DEFAULT_CONSOLE_LOGGER "Enable default console logger" TRUE)
-option(CAUDIO_ENABLE_THREAD_SAFETY "Enable thread safety" TRUE)
+option(CAUDIO_ENABLE_THREAD_SAFETY "Enable thread safety" FALSE)
 option(CAUDIO_ENABLE_STD_MEMORY_ALLOCATOR "Enable Std Memory allocations (memalloc and free)" TRUE)
-option(CAUDIO_ENABLE_REROUTE_STL_ALLOCATIONS "Reroute STL memory allocations" TRUE)
+option(CAUDIO_ENABLE_REROUTE_STL_ALLOCATIONS "Reroute STL memory allocations" FALSE)
 option(CAUDIO_ENABLE_MEMORYTRACKER "Enable memory leak tracker" FALSE)
 option(CAUDIO_ENABLE_MEMORY_LOG_ALL_ALLOCATIONS "Enable log all memory allocations" FALSE)
 option(CAUDIO_ENABLE_MEMORY_STATISTICS "Enable memory statistics generator" FALSE)

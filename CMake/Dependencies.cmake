@@ -4,7 +4,7 @@
 
 # CAUDIO_DEPENDENCIES_DIR can be used to specify a single base
 # folder where the required dependencies may be found.
-set(CAUDIO_DEPENDENCIES_DIR "" CACHE PATH "Path to prebuilt CAUDIO dependencies")
+set(CAUDIO_DEPENDENCIES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies64")
 
 include(FindPkgMacros)
 getenv_path(CAUDIO_DEPENDENCIES_DIR)
@@ -27,5 +27,5 @@ MACRO_DISPLAY_FEATURE_LOG()
 
 # Add library and include paths from the dependencies
 include_directories(
-  ${OPENAL_INCLUDE_DIR}
+  ${CAUDIO_DEPENDENCIES_DIR}/include
 )

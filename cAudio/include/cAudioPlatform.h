@@ -62,5 +62,5 @@
 #define _SECURE_SCL 0
 #define _HAS_ITERATOR_DEBUGGING 0
 #endif
-#include <windows.h>	//Basic windows includes
+//#include <windows.h>	//Basic windows includes
 #endif
