@@ -71,6 +71,7 @@ set (file_root_source_files
 	src/cAudioMemory.cpp
 	src/cAudioSleep.cpp
 	src/cAudioSource.cpp
+	src/cAudioString.cpp
 	src/cConsoleLogReceiver.cpp
 	src/cEffect.cpp
 	src/cFileLogReceiver.cpp
@@ -78,6 +79,7 @@ set (file_root_source_files
 	src/cFilter.cpp
 	src/cListener.cpp
 	src/cLogger.cpp
+	src/cUtils.cpp
 	src/cMemorySource.cpp
 	src/cMemoryTracker.cpp
 	src/cMutex.cpp

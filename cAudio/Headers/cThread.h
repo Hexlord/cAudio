@@ -10,6 +10,7 @@
 
 #ifdef CAUDIO_PLATFORM_WIN
 #include <process.h>
+typedef void* HANDLE;
 #else
 #include <pthread.h>	//Assumed linux system
 #endif	

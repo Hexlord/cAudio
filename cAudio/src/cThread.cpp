@@ -5,6 +5,10 @@
 #include "cThread.h"
 #include "cAudioSleep.h"
 
+#ifdef CAUDIO_PLATFORM_WIN
+#include "Windows.h"
+#endif
+
 namespace cAudio
 {
 	cAudioThread::cAudioThread(IThreadWorker* pWorker) : ThreadHandle(0), Worker(pWorker), ThreadID(0), IsInit(false), Loop(true)

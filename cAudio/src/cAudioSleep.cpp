@@ -11,6 +11,10 @@
 
 #include "cAudioSleep.h"
 
+#ifdef CAUDIO_PLATFORM_WIN
+#include "Windows.h"
+#endif
+
 namespace cAudio
 {
 
