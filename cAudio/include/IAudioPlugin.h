@@ -35,21 +35,21 @@ namespace cAudio
 		//! Called on creation of an Audio Playback Manager.
 		/** Use this to register any decoders or event handlers that you'd like to add to the engine.
 		\param manager: Pointer to the newly created manager. */
-		virtual void onCreateAudioManager(IAudioManager* manager) { }
+		virtual void onCreateAudioManager(IAudioManager* manager) { (void)manager; }
 
 		//! Called on creation of an Audio Capture Manager.
 		/** Use this to register any event handlers that you'd like to add to the engine.
 		\param capture: Pointer to the newly created capture interface. */
-		virtual void onCreateAudioCapture(IAudioCapture* capture) { }
+		virtual void onCreateAudioCapture(IAudioCapture* capture) { (void)capture; }
 
 		//! Called on destruction of an Audio Playback Manager.
 		/** Use this to remove anything you added to the playback manger earlier.
 		\param manager: Pointer to the soon to be destroyed playback interface. */
-		virtual void onDestroyAudioManager(IAudioManager* manager) { }
+		virtual void onDestroyAudioManager(IAudioManager* manager) { (void)manager; }
 
 		//! Called on destruction of an Audio Capture Manager.
 		/** Use this to remove anything you added to a capture manger earlier.
 		\param capture: Pointer to the soon to be destroyed capture interface. */
-		virtual void onDestoryAudioCapture(IAudioCapture* capture) { }
+		virtual void onDestoryAudioCapture(IAudioCapture* capture) { (void)capture; }
 	};
 };

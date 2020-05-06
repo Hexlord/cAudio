@@ -119,7 +119,7 @@ namespace cAudio
 
 		//! The Reflections Delay property is the amount of delay between the arrival time of the direct path
 		//! from the source to the first reflection from the source. It ranges from 0 to 300 milliseconds. You
-		//! can reduce or increase Reflections Delay to simulate closer or more distant reflective surfaces—
+		//! can reduce or increase Reflections Delay to simulate closer or more distant reflective surfacesâ€”
 		//! and therefore control the perceived size of the room.
 		//! Range: 0.0 to 0.3
 		float ReflectionsDelay;
@@ -316,7 +316,7 @@ namespace cAudio
 
 		//! The Reflections Delay property is the amount of delay between the arrival time of the direct path
 		//! from the source to the first reflection from the source. It ranges from 0 to 300 milliseconds. You
-		//! can reduce or increase Reflections Delay to simulate closer or more distant reflective surfaces—
+		//! can reduce or increase Reflections Delay to simulate closer or more distant reflective surfacesâ€”
 		//! and therefore control the perceived size of the room.
 		//! Range: 0.0 to 0.3
 		float ReflectionsDelay;
@@ -747,7 +747,7 @@ namespace cAudio
 			bool active = true) : 
 			Active(active) { }
 
-		//! The Compressor can only be switched on and off – it cannot be adjusted.
+		//! The Compressor can only be switched on and off â€“ it cannot be adjusted.
 		bool Active;
 	};
 

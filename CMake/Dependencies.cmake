@@ -4,7 +4,7 @@
 
 # CAUDIO_DEPENDENCIES_DIR can be used to specify a single base
 # folder where the required dependencies may be found.
-set(CAUDIO_DEPENDENCIES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies64")
+set(CAUDIO_DEPENDENCIES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies")
 
 include(FindPkgMacros)
 getenv_path(CAUDIO_DEPENDENCIES_DIR)
@@ -19,11 +19,9 @@ set(CMAKE_FRAMEWORK_PATH ${CAUDIO_DEPENDENCIES_DIR} ${CMAKE_FRAMEWORK_PATH})
 #######################################################################
 
 # Find OpenAL
-find_package(OpenAL)
-macro_log_feature(OPENAL_FOUND "OpenAL" "Support for Audio" "http://connect.creativelabs.com/openal/default.aspx" TRUE "" "")
 
-# Display results, terminate if anything required is missing
-MACRO_DISPLAY_FEATURE_LOG()
+add_library(openal32 STATIC IMPORTED)
+set_property(TARGET openal32 PROPERTY IMPORTED_LOCATION ${CAUDIO_DEPENDENCIES_DIR}/lib/Debug/OpenAL32.lib)
 
 # Add library and include paths from the dependencies
 include_directories(
