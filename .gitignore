@@ -51,3 +51,5 @@
 # /cAudioCSharp/
 /cAudioCSharp/bin
 /cAudioCSharp/obj
+
+/Examples/CSharpExamples/*/obj/*
