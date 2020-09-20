@@ -10,16 +10,16 @@ const char* cAudio::toUTF8(const cAudioString& str)
 	static int id = 0;
 	static char buffer[8][1024];
 	id = ++id & 0x7;
-
-	int buff_size = WideCharToMultiByte(
-		CP_UTF8,
-		0,
-		str.c_str(),
-		(int)(str.size() < 1023 ? str.size() : 1023),
-		buffer[id],
-		1023,
-		0,
-		false);
+    int UsedDefaultChar = 0;
+    int buff_size = WideCharToMultiByte(
+            CP_UTF8,
+            0,
+            str.c_str(),
+            (int)(str.size() < 1023 ? str.size() : 1023),
+            buffer[id],
+            1023,
+            0,
+            &UsedDefaultChar);
 	buffer[id][buff_size] = 0;
 	buffer[id][1023] = 0;
 	return buffer[id];
