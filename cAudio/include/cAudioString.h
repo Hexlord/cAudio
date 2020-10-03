@@ -42,22 +42,8 @@ namespace cAudio
 #	endif
 #endif
 
-    
-#if defined(CAUDIO_PLATFORM_WIN)
+
 	const char* toUTF8(const cAudioString& str);
-
 	cAudioString fromUTF8(const char* str);
-
-#else
-    inline const char* toUTF8(const cAudioString& str)
-    {
-        return str.c_str();
-    }
-
-    inline cAudioString fromUTF8(const char* str)
-    {
-        return cAudioString(str);
-    }
-#endif
 };
 

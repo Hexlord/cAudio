@@ -30,14 +30,14 @@ cAudio::cAudioVector<std::basic_string<wchar_t>>::Type cAudio::getFilesInDirecto
 #ifdef CAUDIO_PLATFORM_LINUX
 	DIR           *d;
 	struct dirent *dir;
-	d = opendir(path.c_str());
+	d = opendir(toUTF8(path));
 	if (d)
 	{
 		while ((dir = readdir(d)) != NULL)
 		{
 			if( strcmp( dir->d_name, "." ) == 0 || strcmp( dir->d_name, ".." ) == 0 ) { continue; }
 			if( dir->d_type == DT_DIR ) continue;
-			FileList.push_back(dir->d_name);
+			FileList.push_back(fromUTF8(dir->d_name));
 		}
 
 		closedir(d);

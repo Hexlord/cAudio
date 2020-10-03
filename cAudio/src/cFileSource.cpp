@@ -17,7 +17,13 @@ cFileSource::cFileSource(const char* filename) : pFile(NULL), Valid(false), File
 	cAudioString safeFilename = fromUTF8(filename);
     if(safeFilename.length() != 0)
     {
+#if defined(CAUDIO_PLATFORM_WIN)
         pFile = cfopen(safeFilename, "rb");
+#elif defined(CAUDIO_PLATFORM_LINUX)
+        pFile = fopen(filename, "rb");
+#else
+#error Not supported
+#endif
 		if(pFile)
 			Valid = true;
     }

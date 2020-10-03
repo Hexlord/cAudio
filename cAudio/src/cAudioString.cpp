@@ -3,7 +3,7 @@
 
 #ifdef CAUDIO_PLATFORM_WIN
 
-#include "Windows.h"
+#include <Windows.h>
 
 const char* cAudio::toUTF8(const cAudioString& str)
 {
@@ -33,5 +33,28 @@ cAudio::cAudioString cAudio::fromUTF8(const char* str)
 	MultiByteToWideChar(CP_UTF8, 0, str, str_len, &s[0], buf_size);
 	return s;
 }
+#else
+#include <stdio.h>
+#include <stdlib.h>
 
+const char* cAudio::toUTF8(const cAudioString& str)
+{
+    static int id = 0;
+    static char buffer[8][1024];
+    id = ++id & 0x7;
+
+    size_t len = wcstombs(buffer[id], str.c_str(), str.size());
+    if(len > 0u)
+        buffer[id][len] = '\0';
+
+    return buffer[id];
+}
+
+cAudio::cAudioString cAudio::fromUTF8(const char* str)
+{
+    wchar_t buffer[1024];
+    size_t str_len = strlen(str);
+    mbstowcs(buffer, str, str_len);
+    return cAudioString(buffer);
+}
 #endif
