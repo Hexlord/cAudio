@@ -55,6 +55,7 @@ cAudio::cAudioString cAudio::fromUTF8(const char* str)
     wchar_t buffer[1024];
     size_t str_len = strlen(str);
     mbstowcs(buffer, str, str_len);
+    buffer[str_len] = 0;
     return cAudioString(buffer);
 }
 #endif
